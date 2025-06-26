@@ -36,3 +36,23 @@ São requisitos que não estão relacionados diretamente com as funcionalidades 
 - [x] Os dados da aplicação precisam ser persistidos em um banco PostgreSQL;
 - [ ] Todas as listas de dados devem ser paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT;
+
+## Patterns do Projeto
+
+### Repository Pattern
+
+O padrão Repository é utilizado para abstrair a lógica de acesso a dados, permitindo que a aplicação interaja com diferentes fontes de dados (como bancos de dados, APIs externas, etc.) de forma consistente. Ele facilita a manutenção e testes da aplicação.
+
+No contexto desse projeto o Repository Pattern é utilizado para termos uma camada de abstração que representa as operações possíveis em um banco de dados. Além disso, com o uso deste pattern foi possível criar um repositório concreto usando Prisma ORM e outro repositório em memória usado para testes unitários.
+
+### DI (Dependency Injection) Pattern
+
+A Injeção de Dependência é um padrão de design que permite que as dependências de uma classe sejam fornecidas externamente, em vez de serem criadas internamente. Isso promove a flexibilidade e a testabilidade do código, permitindo que diferentes implementações de uma dependência sejam injetadas conforme necessário.
+
+No contexto desse projeto, a Injeção de Dependência é utilizada, por exemplo, para injetar o repositório em memória ou o repositório Prisma ORM dependendo do local que está instânciando as classes. Isso permite que o código seja testado de forma isolada e depois possa ser facilmente adaptado para usar o repositório real com o banco de dados PostgreSQL.
+
+### Factory Pattern
+
+O padrão Factory é um padrão que promove a encapsulação da lógica de criação de objetos, tornando o código mais flexível e fácil de manter. Dessa forma quando uma função de alto nível precisa criar um objeto, ela pode delegar essa responsabilidade a uma fábrica, que é responsável por instanciar o objeto correto.
+
+No contexto desse projeto, o Factory é utilizado para criar instâncias de casos de uso (use cases) diretamente, sem que a classe que irá utilizar o caso de uso precise instanciar diretamente a classe e suas dependências. Isso permite que o código seja mais modular e seja mais fácil adicionar ou alterar as dependências de um caso de uso sem afetar outras partes do código.
