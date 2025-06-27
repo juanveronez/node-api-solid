@@ -22,8 +22,8 @@ São as funcionalidades que o sistema terá, o que será possível fazer na apli
 São regras que o sistema deve seguir, então casos de exceções ou casos particulares que devem ser seguidos para garantir o funcionamento correto.
 
 - [x] O usuário não deve poder se cadastrar com um e-mail já cadastrado;
-- [ ] O usuário não pode fazer dois checkins no mesmo dia;
-- [ ] O usuário não pode fazer checkin se não estiver perto (100 metros) da academia;
+- [x] O usuário não pode fazer dois checkins no mesmo dia;
+- [x] O usuário não pode fazer checkin se não estiver perto (100 metros) da academia;
 - [ ] O checkin só pode ser validado em até 20 minutos após criado;
 - [ ] O checkin só pode ser validado por administradores;
 - [ ] A academia só pode ser cadastrada por administradores;
