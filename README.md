@@ -13,7 +13,7 @@ São as funcionalidades que o sistema terá, o que será possível fazer na apli
 - [ ] Deve ser possível o usuário obter o histórico de checkins;
 - [ ] Deve ser possível o usuário buscar academias próximas;
 - [ ] Deve ser possível o usuário buscar academias pelo nome;
-- [ ] Deve ser possível o usuário fazer checkin em uma academia;
+- [x] Deve ser possível o usuário fazer checkin em uma academia;
 - [ ] Deve ser possível validar o checkin de um usuário;
 - [ ] Deve ser possível cadastrar uma academia;
 
