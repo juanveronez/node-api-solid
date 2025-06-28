@@ -24,7 +24,7 @@ São regras que o sistema deve seguir, então casos de exceções ou casos parti
 - [x] O usuário não deve poder se cadastrar com um e-mail já cadastrado;
 - [x] O usuário não pode fazer dois checkins no mesmo dia;
 - [x] O usuário não pode fazer checkin se não estiver perto (100 metros) da academia;
-- [ ] O checkin só pode ser validado em até 20 minutos após criado;
+- [x] O checkin só pode ser validado em até 20 minutos após criado;
 - [ ] O checkin só pode ser validado por administradores;
 - [ ] A academia só pode ser cadastrada por administradores;
 
