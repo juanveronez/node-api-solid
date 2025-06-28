@@ -3,14 +3,16 @@ import { CheckInsRepository } from '../check-ins-repository'
 import { randomUUID } from 'node:crypto'
 import dayjs from 'dayjs'
 
+const DEFAULT_PAGE_SIZE = 20
+
 export class InMemoryCheckInsRepository implements CheckInsRepository {
-  public checkIns: CheckIn[] = []
+  public items: CheckIn[] = []
 
   async findByUserIdOnDate(userId: string, date: Date) {
     const startOfTheDay = dayjs(date).startOf('date')
     const endOfTheDay = dayjs(date).endOf('date')
 
-    const checkInOnSameDate = this.checkIns.find((checkIn) => {
+    const checkInOnSameDate = this.items.find((checkIn) => {
       const checkInDate = dayjs(checkIn.created_at)
       const isOnSameDate =
         checkInDate.isAfter(startOfTheDay) && checkInDate.isBefore(endOfTheDay)
@@ -19,6 +21,15 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     })
 
     return checkInOnSameDate ?? null
+  }
+
+  async findManyByUserId(userId: string, page: number): Promise<CheckIn[]> {
+    const initialResultIndex = (page - 1) * DEFAULT_PAGE_SIZE
+    const finalResultIndex = page * DEFAULT_PAGE_SIZE
+
+    return this.items
+      .filter((item) => item.user_id === userId)
+      .slice(initialResultIndex, finalResultIndex)
   }
 
   async create({
@@ -34,7 +45,7 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
       validated_at: validated_at ? new Date(validated_at) : null,
     }
 
-    this.checkIns.push(checkIn)
+    this.items.push(checkIn)
     return checkIn
   }
 }
