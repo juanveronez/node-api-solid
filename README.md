@@ -10,7 +10,7 @@ São as funcionalidades que o sistema terá, o que será possível fazer na apli
 - [x] Deve ser possível se autenticar;
 - [x] Deve ser possível obter o perfil de um usuário logado;
 - [ ] Deve ser possível o número de checkins de um usuário logado;
-- [ ] Deve ser possível o usuário obter o histórico de checkins;
+- [x] Deve ser possível o usuário obter o histórico de checkins;
 - [ ] Deve ser possível o usuário buscar academias próximas;
 - [ ] Deve ser possível o usuário buscar academias pelo nome;
 - [x] Deve ser possível o usuário fazer checkin em uma academia;
@@ -34,7 +34,7 @@ São requisitos que não estão relacionados diretamente com as funcionalidades 
 
 - [x] A senha do usuário deve ser criptografada;
 - [x] Os dados da aplicação precisam ser persistidos em um banco PostgreSQL;
-- [ ] Todas as listas de dados devem ser paginadas com 20 itens por página;
+- [x] Todas as listas de dados devem ser paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT;
 
 ## Patterns do Projeto
