@@ -11,7 +11,7 @@ São as funcionalidades que o sistema terá, o que será possível fazer na apli
 - [x] Deve ser possível obter o perfil de um usuário logado;
 - [x] Deve ser possível o número de checkins de um usuário logado;
 - [x] Deve ser possível o usuário obter o histórico de checkins;
-- [ ] Deve ser possível o usuário buscar academias próximas;
+- [x] Deve ser possível o usuário buscar academias próximas;
 - [x] Deve ser possível o usuário buscar academias pelo nome;
 - [x] Deve ser possível o usuário fazer checkin em uma academia;
 - [ ] Deve ser possível validar o checkin de um usuário;
