@@ -3,12 +3,23 @@ import { GymsRepository } from '../gyms-repository'
 import { randomUUID } from 'node:crypto'
 import { Decimal } from 'generated/prisma/runtime/library'
 
+const DEFAULT_PAGE_SIZE = 20
+
 export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = []
 
   async findById(id: string) {
     const item = this.items.find((gym) => gym.id === id)
     return item ?? null
+  }
+
+  async searchMany(query: string, page: number) {
+    const initialResultIndex = (page - 1) * DEFAULT_PAGE_SIZE
+    const finalResultIndex = page * DEFAULT_PAGE_SIZE
+
+    return this.items
+      .filter((item) => item.title.toUpperCase().includes(query.toUpperCase()))
+      .slice(initialResultIndex, finalResultIndex)
   }
 
   async create(data: Prisma.GymCreateInput) {
