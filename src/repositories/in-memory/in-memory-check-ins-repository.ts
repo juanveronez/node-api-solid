@@ -32,6 +32,10 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
       .slice(initialResultIndex, finalResultIndex)
   }
 
+  async countByUserId(userId: string) {
+    return this.items.filter((item) => item.user_id === userId).length
+  }
+
   async create({
     gym_id,
     user_id,
