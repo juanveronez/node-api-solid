@@ -14,7 +14,7 @@ São as funcionalidades que o sistema terá, o que será possível fazer na apli
 - [x] Deve ser possível o usuário buscar academias próximas;
 - [x] Deve ser possível o usuário buscar academias pelo nome;
 - [x] Deve ser possível o usuário fazer checkin em uma academia;
-- [ ] Deve ser possível validar o checkin de um usuário;
+- [x] Deve ser possível validar o checkin de um usuário;
 - [x] Deve ser possível cadastrar uma academia;
 
 ## RNs (Regras de Negócio)
