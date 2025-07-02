@@ -56,3 +56,9 @@ No contexto desse projeto, a Injeção de Dependência é utilizada, por exemplo
 O padrão Factory é um padrão que promove a encapsulação da lógica de criação de objetos, tornando o código mais flexível e fácil de manter. Dessa forma quando uma função de alto nível precisa criar um objeto, ela pode delegar essa responsabilidade a uma fábrica, que é responsável por instanciar o objeto correto.
 
 No contexto desse projeto, o Factory é utilizado para criar instâncias de casos de uso (use cases) diretamente, sem que a classe que irá utilizar o caso de uso precise instanciar diretamente a classe e suas dependências. Isso permite que o código seja mais modular e seja mais fácil adicionar ou alterar as dependências de um caso de uso sem afetar outras partes do código.
+
+## JWT (JSON Web Token)
+
+O JWT é um padrão de autenticação que permite a troca segura de informações entre partes. Nele as informações são codificadas em um token que pode ser verificado e validado. O JWT tem três partes: o cabeçalho (header), o corpo (payload) e a assinatura (signature). O cabeçalho contém informações sobre o tipo de token e o algoritmo de assinatura, o corpo contém as informações do usuário e a assinatura é usada para verificar a integridade do token.
+
+Para que o Token seja válido, ele deve ser assinado com uma chave secreta que é conhecida apenas pelo servidor. Sendo que essa assinatura é o que garante que o token não foi alterado e que é autêntico.
