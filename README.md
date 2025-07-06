@@ -66,3 +66,7 @@ Para que o Token seja válido, ele deve ser assinado com uma chave secreta que �
 ## RBAC (Roles Based Access Control)
 
 O RBAC é um modelo de controle de acesso que atribui permissões a um usuário com base em seu papel (role) dentro do sistema. Nesse modelo o usuário tem uma ou mais roles atreladas a ele, e cada role tem um conjunto de permissões que determinam o que o usuário pode ou não fazer no sistema.
+
+## CI (Continuous Integration)
+
+É uma prática de desenvolvimento onde o código é integrado continuamente em um repositório compartilhado. São rodados scripts que fazem a validação de cada nova versão do código, garantindo que o código esteja sempre em um estado saudável e que as funcionalidades estejam funcionando corretamente.
