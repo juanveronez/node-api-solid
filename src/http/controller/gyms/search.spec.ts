@@ -2,6 +2,7 @@ import request from 'supertest'
 import { app } from '@/app'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createAndAuthenticateUser } from '@/utils/test/create-and-authenticate-user'
+import { prisma } from '@/lib/prisma'
 
 describe('Search Gyms (e2e)', () => {
   beforeAll(async () => {
@@ -15,27 +16,24 @@ describe('Search Gyms (e2e)', () => {
   it('should be able to search gyms', async () => {
     const { token } = await createAndAuthenticateUser(app)
 
-    await request(app.server)
-      .post('/gyms')
-      .set('Authorization', `Bearer ${token}`)
-      .send({
-        title: 'Backend Gym',
-        description: 'A gym to test this controller',
-        phone: '11988887777',
-        latitude: -22.9780512,
-        longitude: -47.0503237,
-      })
-
-    await request(app.server)
-      .post('/gyms')
-      .set('Authorization', `Bearer ${token}`)
-      .send({
-        title: 'Frontend Gym',
-        description: 'A gym to test this controller',
-        phone: '11988887777',
-        latitude: -22.9780512,
-        longitude: -47.0503237,
-      })
+    await prisma.gym.createMany({
+      data: [
+        {
+          title: 'Backend Gym',
+          description: 'A gym to test this controller',
+          phone: '11988887777',
+          latitude: -22.9780512,
+          longitude: -47.0503237,
+        },
+        {
+          title: 'Frontend Gym',
+          description: 'A gym to test this controller',
+          phone: '11988887777',
+          latitude: -22.9780512,
+          longitude: -47.0503237,
+        },
+      ],
+    })
 
     const response = await request(app.server)
       .get('/gyms/search')
