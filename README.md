@@ -25,8 +25,8 @@ São regras que o sistema deve seguir, então casos de exceções ou casos parti
 - [x] O usuário não pode fazer dois checkins no mesmo dia;
 - [x] O usuário não pode fazer checkin se não estiver perto (100 metros) da academia;
 - [x] O checkin só pode ser validado em até 20 minutos após criado;
-- [ ] O checkin só pode ser validado por administradores;
-- [ ] A academia só pode ser cadastrada por administradores;
+- [x] O checkin só pode ser validado por administradores;
+- [x] A academia só pode ser cadastrada por administradores;
 
 ## RNFs (Requisitos Não Funcionais)
 
@@ -35,7 +35,7 @@ São requisitos que não estão relacionados diretamente com as funcionalidades 
 - [x] A senha do usuário deve ser criptografada;
 - [x] Os dados da aplicação precisam ser persistidos em um banco PostgreSQL;
 - [x] Todas as listas de dados devem ser paginadas com 20 itens por página;
-- [ ] O usuário deve ser identificado por um JWT;
+- [x] O usuário deve ser identificado por um JWT;
 
 ## Patterns do Projeto
 
@@ -62,3 +62,7 @@ No contexto desse projeto, o Factory é utilizado para criar instâncias de caso
 O JWT é um padrão de autenticação que permite a troca segura de informações entre partes. Nele as informações são codificadas em um token que pode ser verificado e validado. O JWT tem três partes: o cabeçalho (header), o corpo (payload) e a assinatura (signature). O cabeçalho contém informações sobre o tipo de token e o algoritmo de assinatura, o corpo contém as informações do usuário e a assinatura é usada para verificar a integridade do token.
 
 Para que o Token seja válido, ele deve ser assinado com uma chave secreta que é conhecida apenas pelo servidor. Sendo que essa assinatura é o que garante que o token não foi alterado e que é autêntico.
+
+## RBAC (Roles Based Access Control)
+
+O RBAC é um modelo de controle de acesso que atribui permissões a um usuário com base em seu papel (role) dentro do sistema. Nesse modelo o usuário tem uma ou mais roles atreladas a ele, e cada role tem um conjunto de permissões que determinam o que o usuário pode ou não fazer no sistema.
